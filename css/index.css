@@ -10,7 +10,6 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     color: white;
-    border: 1px solid black;
 }
 :root{
     --dark-gray:#242424;
@@ -56,4 +55,77 @@ header{
 }
 .busca box-icon:hover{
     fill: var(--pink);
+}
+.container{
+    margin-top: 65px;
+
+}
+#teams h2{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+#teams h2 button{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid var(--pink);
+    border-radius: 5px;
+    line-height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+#teams h2 button:hover{
+    background-color: var(--pink);
+}
+#teams box-icon{
+    fill: white;
+    margin-bottom: 2.6px;
+}
+#teams ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+
+}
+#teams ul li{
+    width: calc(20% - 13px);
+    background-color: var(--medium-gray);
+    padding: 16px;
+    border-radius: 15px;
+}
+#teams h4{
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    fill: white;
+    align-items: center;
+}
+#teams h1{
+    width: 100px;
+    height: 100px;
+    background-color: var(--light-gray);
+    font-size: 50px;
+    margin: 26px auto;
+    border-radius: 100%;
+    font-weight: lighter;
+    line-height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#teams ul li h1 span{
+    display: block;
+    font-size:16px ;
+    font-weight: bold;
 }
