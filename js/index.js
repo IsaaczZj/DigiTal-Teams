@@ -1,22 +1,20 @@
-let teams = []
+let teams = [];
 
 criarBtn.onclick = () => {
   // alert("Clicou")
   console.log("Clicou rapaz");
-  overlay.classList.add("show");
-  formCriar.classList.add("show");
+  overlay.classList.toggle("show");
+  formCriar.classList.toggle("show");
 };
 fecharBtn.onclick = () => {
-  overlay.classList.remove("show");
-  formCriar.classList.remove("show");
+  overlay.classList.toggle("show");
+  formCriar.classList.toggle("show");
 };
 
 overlay.onclick = () => {
-  overlay.classList.remove("show");
-  formCriar.classList.remove("show");
+  overlay.classList.toggle("show");
+  formCriar.classList.toggle("show");
 };
-
-
 
 formCriar.onsubmit = () => {
   event.preventDefault();
@@ -24,23 +22,27 @@ formCriar.onsubmit = () => {
   teams.push({
     name: nome.value,
     capacity: capacidade.value,
-    members: []
-
+    members: [],
   });
 
-
-
-  // listTeams.innerHTML = " ";
-  // listTeams.innerHTML = `<li>
-  //  <h4>${nome.value} <box-icon name='show'></box-icon></h4>
-  //   <h1>0/ <span>${capacidade.value}</span></h1>
-  //   <div class="actions">
-  //   <button>adicionar</button>
-  //   <button><box-icon name='trash'></box-icon></button>
-  //   </div>`;
-
-  alert(nome.value);
+  adicionarCard()
+  
 
   overlay.classList.remove("show");
   formCriar.classList.remove("show");
 };
+
+function adicionarCard() {
+  listTeams.innerHTML = " ";
+  for (let i = 0; i < teams.length; i++) {
+    listTeams.innerHTML += `
+    <li>
+      <h4>${teams[i].name} <box-icon name='show'></box-icon></h4>
+      <h1>0/ <span>${teams[i].capacity}</span></h1>
+      <div class="actions">
+        <button>adicionar</button>
+        <button><box-icon name='trash'></box-icon></button>
+      </div> 
+      </li>`;
+  }
+}
