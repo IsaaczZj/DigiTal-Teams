@@ -55,7 +55,7 @@ formAddParticipante.onsubmit = () =>{
 
 function adicionarCard() {
   listTeams.innerHTML = " ";
-  if(teams.length ===0){
+  if(teams.length === 0){
 	listTeams.innerHTML = '<li class="semTime"><h4>Nenhum time criado</h4></li>'
 	return
   }
@@ -67,7 +67,7 @@ function adicionarCard() {
       <h1>0/ <span>${teams[i].capacity}</span></h1>
       <div class="actions">
         <button onclick = "mostrarFormParticipante(${i})">adicionar</button>
-        <button onclick ="removerCard(${i})"><box-icon name='trash'></box-icon></button>
+        <button onclick="aparecerExclusao()"><box-icon name='trash'></box-icon></button>
       </div> 
       </li>`;
   }
@@ -102,3 +102,13 @@ function mostrarFormParticipante(indice){
 	teamID.value = indice
 }
 
+function aparecerExclusao(){
+	confirmarExcluirTeam.classList.add("show")
+	overlay.classList.add("show")
+}
+
+function desaparecerExclusao(){
+	event.preventDefault()
+	confirmarExcluirTeam.classList.remove("show")
+	overlay.classList.remove("show")
+}
