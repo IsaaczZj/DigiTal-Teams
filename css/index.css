@@ -96,8 +96,11 @@ header{
     flex-wrap: wrap;
     gap: 16px;
     margin-top: 20px;
-
 }
+#teams ul li.none{
+    display: none;
+}
+
 #teams ul li{
     width: calc(20% - 13px);
     background-color: var(--medium-gray);

@@ -1,7 +1,6 @@
 let teams = JSON.parse(localStorage.getItem("lista")) || [];
 
 criarBtn.onclick = () => {
-  // alert("Clicou")
   console.log("Clicou rapaz");
   overlay.classList.toggle("show");
   formCriar.classList.toggle("show");
@@ -126,4 +125,27 @@ function desaparecerExclusao(){
 }
 function mostrarParticipantes(indice){
 	alert(teams[indice].members)
+}
+
+function buscaTeam(){
+	let lista = document.querySelectorAll("#teams ul li")
+	
+	if(pesquisa.value.length >= 3){
+		for(let i = 0;i < lista.length; i++){
+			if(lista[i].children[0].innerText.toString().toLowerCase().includes(pesquisa.value)){
+				console.log(lista[i].children[0].innerText.toString());
+				lista[i].classList.remove('none')
+			}
+			else{
+				lista[i].classList.add("none")
+
+			}
+		}
+		
+	}
+	else{
+		for(let i = 0;i < lista.length; i++){
+			lista[i].classList.remove('none')
+	}
+}
 }
